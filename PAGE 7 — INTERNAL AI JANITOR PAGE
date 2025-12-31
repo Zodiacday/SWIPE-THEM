@@ -1,0 +1,423 @@
+7. INTERNAL AI JANITOR
+The Internal AI Janitor is the product’s assistive intelligence layer — a metadata‑only AI system that helps the user clean their inbox faster, safer, and more intelligently.
+
+It is not a generative model.
+It is not a content‑reading model.
+It is not an autonomous agent.
+
+It is a pattern‑recognition engine that:
+
+Detects spam patterns
+
+Identifies persistent offenders
+
+Suggests actions
+
+Groups senders
+
+Predicts unsubscribe opportunities
+
+Enhances swipe decisions
+
+Powers insights
+
+Improves automation rules
+
+This page defines the full architecture, behavior, safety rules, and outputs of the AI Janitor.
+
+7.1 Philosophy of the AI Janitor
+1. Assistive, not autonomous
+AI never takes actions without user approval.
+
+2. Metadata‑only
+AI never reads email content.
+It uses:
+
+Sender
+
+Domain
+
+Frequency
+
+Headers
+
+Categories
+
+User actions
+
+Historical patterns
+
+3. Safety‑biased
+If unsure → AI stays silent.
+
+4. Predictive, not generative
+AI predicts what the user likely wants, not what the email contains.
+
+5. Transparent
+AI suggestions must be explainable.
+
+7.2 AI Janitor Responsibilities
+The AI Janitor performs six core jobs:
+
+Job 1 — Spam Pattern Detection
+AI identifies:
+
+High‑frequency senders
+
+Repetitive subject patterns
+
+Known spam domains
+
+Suspicious unsubscribe patterns
+
+Bulk‑sending behavior
+
+Tracking-heavy metadata
+
+“Spray and pray” marketing senders
+
+Outputs:
+
+spam_score
+
+spam_reason
+
+Suggested action: block or delete
+
+Job 2 — Persistent Offender Detection
+AI tracks senders that:
+
+Reappear after unsubscribe
+
+Send multiple emails per day
+
+Send from rotating domains
+
+Use deceptive metadata
+
+Trigger user frustration
+
+AI flags them as:
+
+persistent_spammer
+
+domain_rotator
+
+unsubscribe_evader
+
+Suggested actions:
+
+Block sender
+
+Nuke domain
+
+Auto-delete future emails
+
+Job 3 — Suggestion Engine
+AI suggests actions for each email:
+
+Delete
+
+Unsubscribe
+
+Block
+
+Keep
+
+Nuke domain
+
+Suggestions are based on:
+
+Sender reputation
+
+User history
+
+Frequency
+
+Domain patterns
+
+Newsletter detection
+
+Past user actions
+
+AI must show:
+
+Confidence score
+
+Reason for suggestion
+
+Example:
+
+“This sender emails you 4× per week and you’ve deleted the last 12 emails. Suggest: Unsubscribe.”
+
+Job 4 — Sender Grouping & Clustering
+AI groups senders into clusters:
+
+Newsletters
+
+Promotions
+
+Social updates
+
+Transactional
+
+Personal
+
+Spam
+
+Unknown
+
+Clustering uses:
+
+Domain similarity
+
+Frequency patterns
+
+Header metadata
+
+User actions
+
+Provider categories
+
+This powers:
+
+Insights
+
+Automation rules
+
+Domain nuking
+
+Bulk cleanup suggestions
+
+Job 5 — Inbox Insights Engine
+AI generates insights such as:
+
+Top senders
+
+Top spam domains
+
+Most deleted senders
+
+Most unsubscribed senders
+
+Inbox health score
+
+Time saved
+
+Cleanup streaks
+
+Volume trends
+
+Insights must be:
+
+Simple
+
+Visual
+
+Actionable
+
+Example:
+
+“You deleted 87 emails from 9 senders this week. Blocking them would save ~3 minutes/day.”
+
+Job 6 — Automation Rule Suggestions
+AI proposes rules such as:
+
+Auto-delete newsletters
+
+Auto-block spammy senders
+
+Auto-nuke domains
+
+Auto-archive promotions
+
+Auto-keep transactional emails
+
+Rules must be:
+
+Suggested only
+
+Never auto‑enabled
+
+Explainable
+
+Undo‑friendly
+
+Example:
+
+“You’ve deleted 100% of emails from @promo-news.com. Suggest: Auto-delete future emails.”
+
+7.3 AI Janitor Architecture
+The AI Janitor consists of five sub‑models:
+
+Model 1 — Sender Reputation Model
+Inputs:
+
+Sender frequency
+
+Domain reputation
+
+User actions
+
+Provider category
+
+Header metadata
+
+Outputs:
+
+sender_score (0–1)
+
+spam_likelihood
+
+newsletter_likelihood
+
+Model 2 — Pattern Detection Model
+Detects:
+
+Repetitive senders
+
+Daily senders
+
+Weekly senders
+
+Batch senders
+
+Rotating domains
+
+Unsubscribe evaders
+
+Outputs:
+
+pattern_type
+
+pattern_confidence
+
+Model 3 — Clustering Model
+Groups senders using:
+
+Domain similarity
+
+Header patterns
+
+Frequency
+
+User behavior
+
+Outputs:
+
+cluster_id
+
+cluster_label
+
+Model 4 — Action Prediction Model
+Predicts what the user will do:
+
+Delete
+
+Unsubscribe
+
+Block
+
+Keep
+
+Nuke domain
+
+Inputs:
+
+Past actions
+
+Sender reputation
+
+Frequency
+
+Domain patterns
+
+Outputs:
+
+suggested_action
+
+confidence
+
+explanation
+
+Model 5 — Insights Model
+Generates:
+
+Inbox health score
+
+Time saved
+
+Cleanup trends
+
+Sender rankings
+
+Domain rankings
+
+Outputs:
+
+insight_cards[]
+
+7.4 Safety Constraints
+1. No content reading
+Metadata only.
+
+2. No auto‑actions
+AI never deletes, blocks, or unsubscribes automatically.
+
+3. No irreversible actions
+Undo everywhere.
+
+4. No suggestions for personal senders
+Humans are always classified as “KEEP”.
+
+5. No domain nuking suggestions for mixed‑purpose domains
+Apple, Google, Amazon, banks, airlines, etc.
+
+6. No suggestions with low confidence
+If confidence < 0.6 → AI stays silent.
+
+7.5 AI Janitor Output Object
+Code
+AIJanitorResult {
+  suggested_action: "delete" | "unsubscribe" | "block" | "keep" | "nuke" | null,
+  confidence: number,
+  reason: string,
+  spam_score: number,
+  sender_score: number,
+  cluster: string,
+  insights: InsightCard[],
+  automation_suggestions: RuleSuggestion[]
+}
+7.6 Performance Requirements
+Suggestion generation < 150ms
+
+Clustering < 50ms
+
+Insights < 200ms
+
+Pattern detection < 100ms
+
+Undo < 100ms
+
+7.7 Logging
+Every AI suggestion logs:
+
+Code
+AISuggestionLog {
+  id
+  user_id
+  email_id
+  suggested_action
+  confidence
+  reason
+  timestamp
+}
+Logs power:
+
+AI learning
+
+Stats
+
+Automation rules
+
+Insights
