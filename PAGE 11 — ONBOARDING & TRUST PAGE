@@ -1,0 +1,359 @@
+11. ONBOARDING & TRUST
+The onboarding flow is one of the most critical systems in the entire product.
+It must:
+
+Build trust
+
+Reduce fear
+
+Explain safety
+
+Show value instantly
+
+Minimize friction
+
+Deliver an emotional “first win”
+
+Convert users into daily cleaners
+
+This page defines the full onboarding system, including:
+
+Safety messaging
+
+Permission explanations
+
+First‑time experience
+
+Emotional reassurance
+
+Quick‑start flow
+
+Trust‑building UI patterns
+
+Copywriting principles
+
+Behavioral psychology
+
+11.1 Onboarding Philosophy
+1. Trust before access
+Users must feel safe before connecting their inbox.
+
+2. Emotion before logic
+We reduce anxiety first, then explain features.
+
+3. Transparency always
+No hidden behavior.
+No surprises.
+No auto‑actions.
+
+4. First win fast
+Users must swipe their first email within 30 seconds of signup.
+
+5. Safety as a feature
+Undo everywhere.
+Metadata‑only AI.
+No content reading.
+
+6. Zero cognitive load
+Short sentences.
+Simple visuals.
+One decision per screen.
+
+11.2 Onboarding Flow Overview
+The onboarding flow has 7 stages:
+
+Welcome Screen
+
+The Problem
+
+The Promise
+
+Safety & Trust
+
+Connect Inbox
+
+Tutorial Swipe
+
+First Real Cleanup
+
+Each stage is detailed below.
+
+11.3 Stage 1 — Welcome Screen
+Purpose
+Set tone
+
+Establish brand personality
+
+Create emotional resonance
+
+UI
+Clean hero illustration
+
+“Swipe your inbox clean in seconds.”
+
+CTA: “Get Started”
+
+Psychology
+Reduce friction
+
+Create curiosity
+
+Establish simplicity
+
+11.4 Stage 2 — The Problem
+Purpose
+Make users feel understood.
+
+Copy Examples
+“Your inbox is overflowing.”
+
+“Newsletters, promos, spam — it never stops.”
+
+“Cleaning it manually takes hours.”
+
+Visuals
+Animated inbox filling up
+
+Red notification bubbles
+
+Psychology
+Empathy
+
+Shared frustration
+
+Emotional alignment
+
+11.5 Stage 3 — The Promise
+Purpose
+Show the transformation.
+
+Copy Examples
+“Clean your inbox with simple swipes.”
+
+“Delete, unsubscribe, block — instantly.”
+
+“Feel lighter in seconds.”
+
+Visuals
+Swipe animation
+
+Clean inbox reveal
+
+Psychology
+Relief
+
+Hope
+
+Motivation
+
+11.6 Stage 4 — Safety & Trust
+This is the most important onboarding step.
+
+Purpose
+Remove fear and build trust.
+
+Key Messages
+We never read your email content.
+
+AI uses metadata only.
+
+Undo everywhere — nothing is permanent.
+
+No auto‑actions — you’re always in control.
+
+You can disconnect anytime.
+
+UI
+Shield icon
+
+Simple bullet points
+
+“Learn more” expandable section
+
+Psychology
+Reduce anxiety
+
+Increase confidence
+
+Build credibility
+
+11.7 Stage 5 — Connect Inbox
+Purpose
+Get access to email provider.
+
+Providers
+Gmail
+
+Outlook
+
+Yahoo
+
+iCloud
+
+Fastmail
+
+IMAP
+
+UI
+Provider buttons
+
+OAuth screens
+
+“We never store your password” message
+
+Friction Reduction
+Show provider logos
+
+Show trust badges
+
+Show privacy reassurance
+
+Psychology
+Familiarity
+
+Safety
+
+Ease
+
+11.8 Stage 6 — Tutorial Swipe
+The user must experience the core mechanic immediately.
+
+Tutorial Steps
+Show a fake email card
+
+Highlight swipe directions
+
+Ask user to swipe right (unsubscribe)
+
+Show animation + sound
+
+Show “Nice!” message
+
+Ask user to swipe left (delete)
+
+Show combo animation
+
+Tutorial Goals
+Teach swipe directions
+
+Build confidence
+
+Deliver dopamine
+
+Remove fear
+
+Psychology
+Mastery
+
+Competence
+
+Momentum
+
+11.9 Stage 7 — First Real Cleanup
+Purpose
+Deliver the first real emotional win.
+
+Flow
+Load 10 real emails
+
+User swipes through them
+
+Show progress bar
+
+Trigger combo
+
+Trigger mini victory screen
+
+Victory Screen
+“You cleared 10 emails!”
+
+“Time saved: 1.2 minutes”
+
+“You’re off to a great start.”
+
+Psychology
+Achievement
+
+Relief
+
+Motivation to continue
+
+11.10 Trust‑Building UI Patterns
+1. Transparency Panels
+Show exactly what the app can and cannot do.
+
+2. Safety Badges
+“Undo everywhere”
+
+“Metadata‑only AI”
+
+“No auto‑actions”
+
+3. Provider Logos
+Increases trust.
+
+4. Micro‑copy
+Short, reassuring messages.
+
+5. No dark patterns
+No forced actions.
+No hidden settings.
+
+11.11 Copywriting Principles
+Tone
+Calm
+
+Friendly
+
+Confident
+
+Reassuring
+
+Rules
+Short sentences
+
+No jargon
+
+No fear‑based language
+
+No guilt
+
+No pressure
+
+Examples
+“You’re always in control.”
+
+“Nothing is permanent.”
+
+“Undo is always available.”
+
+“We never read your email content.”
+
+11.12 Behavioral Psychology Principles
+1. Reduce Uncertainty
+Clear explanations reduce anxiety.
+
+2. Provide Safety Nets
+Undo reduces fear of mistakes.
+
+3. Show Immediate Progress
+First win builds momentum.
+
+4. Build Identity
+“You’re someone who keeps your inbox clean.”
+
+5. Avoid Shame
+No “inbox zero” guilt.
+
+11.13 Onboarding Success Metrics
+Time to first swipe (< 30 seconds)
+
+Inbox connection rate
+
+Tutorial completion rate
+
+First session completion rate
+
+Day‑1 retention
+
+Day‑7 retention
