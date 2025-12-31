@@ -1,1 +1,376 @@
+13. MVP SCOPE
+The MVP is designed to deliver the fastest, safest, most emotionally satisfying inbox cleanup experience, without unnecessary complexity.
 
+The MVP must:
+
+Deliver the core swipe experience
+
+Support real email cleanup
+
+Provide basic AI suggestions
+
+Build trust and safety
+
+Show clear emotional payoff
+
+Avoid scope creep
+
+Ship fast
+
+This page defines:
+
+What’s in
+
+What’s out
+
+What’s postponed
+
+What’s essential
+
+What’s optional
+
+13.1 MVP Philosophy
+1. Ship the dopamine loop first
+The swipe experience is the product.
+
+2. Safety > automation
+Undo everywhere.
+No auto‑actions.
+No risky rules.
+
+3. Metadata‑only AI
+No content reading.
+No hallucinations.
+No generative behavior.
+
+4. Emotion > features
+The MVP must feel amazing.
+
+5. Reduce engineering risk
+Start with Gmail only.
+Add others later.
+
+13.2 What’s In (MVP)
+These features are required for launch.
+
+A. Core Swipe Experience
+Included
+Swipe left → delete
+
+Swipe right → unsubscribe
+
+Swipe up → block
+
+Swipe down → keep
+
+Long‑press → domain nuke (with confirmation)
+
+Card stack (3‑card system)
+
+Motion, tilt, color, icon previews
+
+Haptics + sound
+
+Undo system
+
+Progress bar
+
+Mini victory screen
+
+Why?
+This is the heart of the product.
+
+B. Gmail Integration (Only Gmail for MVP)
+Included
+OAuth login
+
+Fetch emails
+
+Metadata normalization
+
+Delete
+
+Unsubscribe
+
+Block (via Gmail filters)
+
+Domain nuke (via Gmail filters)
+
+Batch delete
+
+Undo support
+
+Why?
+Gmail = 60–70% of target users.
+Fastest path to launch.
+
+C. Newsletter Detection Engine (MVP Version)
+Included
+List‑Unsubscribe detection
+
+Gmail category detection
+
+Sender domain reputation
+
+Basic frequency detection
+
+Heuristic scoring
+
+Why?
+Needed for swipe suggestions + sorting.
+
+D. Internal AI Janitor (MVP Version)
+Included
+Basic sender reputation
+
+Basic spam score
+
+Simple action suggestions
+
+No clustering
+
+No insights
+
+No automation suggestions
+
+Why?
+Just enough intelligence to feel smart.
+
+E. Onboarding & Trust
+Included
+Welcome flow
+
+Safety messaging
+
+Permission explanation
+
+Gmail connect
+
+Tutorial swipe
+
+First cleanup session
+
+Why?
+Trust is essential for inbox access.
+
+F. Basic Insights (MVP Version)
+Included
+Emails cleared
+
+Time saved
+
+Top senders removed
+
+Mini streak counter
+
+Why?
+Emotional payoff.
+
+G. Database (MVP Version)
+Included
+Users
+
+Email accounts
+
+Emails
+
+Senders
+
+Domains
+
+Actions
+
+Undo tokens
+
+Why?
+Minimum needed for functionality.
+
+13.3 What’s Out (Not in MVP)
+These features are explicitly excluded from MVP.
+
+A. Multi‑Provider Support
+Outlook
+
+Yahoo
+
+iCloud
+
+Fastmail
+
+IMAP
+
+Reason
+Massive engineering overhead.
+Add after traction.
+
+B. Automation Rules
+Auto‑delete
+
+Auto‑block
+
+Auto‑nuke
+
+Auto‑archive
+
+Rule suggestions
+
+Reason
+High risk.
+Needs trust + data.
+
+C. Full AI Janitor
+Clustering
+
+Domain rotation detection
+
+Persistent offender detection
+
+Advanced insights
+
+Pattern modeling
+
+Reason
+Not needed for MVP dopamine loop.
+
+D. Gamification (Advanced)
+Boss fights
+
+Zen mode
+
+Rage mode
+
+XP system
+
+Badges
+
+Titles
+
+Reason
+Add after core loop is validated.
+
+E. Multi‑Inbox Control Center
+Multiple accounts
+
+Unified inbox
+
+Cross‑provider rules
+
+Reason
+Too complex for MVP.
+
+F. Deep Analytics
+Inbox health score
+
+Weekly reports
+
+Trend analysis
+
+Reason
+Not essential for first release.
+
+13.4 What’s Postponed (v1.5+)
+These features are important, but not needed for MVP.
+
+A. Boss Fights
+High emotional payoff, but not required for core loop.
+
+B. Zen/Rage Modes
+Enhances experience, not required for functionality.
+
+C. Advanced Insights
+Requires more data + AI.
+
+D. Multi‑Provider Support
+Critical for growth, not for MVP.
+
+E. Automation Rules
+Must wait until trust is established.
+
+13.5 What’s Essential (Must Ship)
+These are non‑negotiable for MVP.
+
+Swipe engine
+
+Undo system
+
+Gmail integration
+
+Newsletter detection
+
+Basic AI suggestions
+
+Onboarding + trust
+
+Mini victory screen
+
+Progress bar
+
+Basic insights
+
+Domain nuke (with confirmation)
+
+Logging + database
+
+13.6 What’s Optional (Nice to Have)
+If time allows:
+
+Combo animations
+
+Sound packs
+
+Light gamification
+
+Streaks
+
+Sender avatars
+
+Themed UI (garden/dojo)
+
+Haptic variations
+
+These improve emotional UX but are not required.
+
+13.7 MVP Success Metrics
+Product Metrics
+Time to first swipe < 30 seconds
+
+Emails cleared per session
+
+Undo usage rate
+
+Swipe completion rate
+
+Session length
+
+User Metrics
+Day‑1 retention
+
+Day‑7 retention
+
+Gmail connection rate
+
+Tutorial completion rate
+
+Emotional Metrics
+“Inbox feels lighter” feedback
+
+User satisfaction
+
+Repeat sessions
+
+13.8 MVP Release Criteria
+The MVP is ready when:
+
+Swipe engine is flawless
+
+Undo is 100% reliable
+
+Gmail integration is stable
+
+No irreversible actions exist
+
+Onboarding builds trust
+
+Users can clear 50 emails in < 2 minutes
+
+Victory screen feels rewarding
