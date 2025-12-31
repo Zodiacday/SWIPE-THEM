@@ -1,1 +1,320 @@
+6. BLOCK & DOMAIN NUKE ENGINE
+The Block & Domain Nuke Engine is responsible for permanently silencing unwanted senders and eliminating entire domains from the user’s inbox — safely, consistently, and across all providers.
 
+This engine must be:
+
+Fast
+
+Deterministic
+
+Provider‑aware
+
+Metadata‑only
+
+Undo‑friendly
+
+Safe by default
+
+This page defines the full logic, provider differences, safety rules, and execution flow.
+
+6.1 Purpose of the Engine
+The engine handles:
+
+1. Blocking individual senders
+Prevent future emails
+
+Delete existing emails
+
+Create provider‑level or local rules
+
+2. Nuking entire domains
+Block all senders from a domain
+
+Delete all existing emails from that domain
+
+Create persistent rules
+
+3. Ensuring safety
+Never block personal senders
+
+Never nuke mixed‑purpose domains
+
+Always allow undo
+
+4. Logging
+Every block/nuke action is logged
+
+AI learns from patterns
+
+6.2 Block Sender Logic
+Blocking a sender means:
+
+Future emails from that sender are auto‑deleted or auto‑archived
+
+Existing emails are removed
+
+A rule is created to enforce this behavior
+
+Block Flow
+Identify sender email
+
+Extract domain
+
+Check safety rules
+
+Execute provider‑specific block
+
+Delete existing emails
+
+Create persistent rule
+
+Log action
+
+Provide undo token
+
+6.3 Domain Nuke Logic
+Nuking a domain means:
+
+Blocking every sender from that domain
+
+Deleting all existing emails from that domain
+
+Creating a domain‑level rule
+
+Ensuring future emails never appear
+
+Domain Nuke Flow
+Extract domain
+
+Check domain safety
+
+Identify all senders from domain
+
+Delete all emails from domain
+
+Create domain‑level block rule
+
+Log action
+
+Provide undo token
+
+6.4 Provider‑Specific Behavior
+Different providers support blocking differently.
+
+Gmail
+Blocking a Sender
+Gmail does not have a true “block” API.
+We simulate blocking by creating a filter:
+
+Code
+If From: sender@example.com
+→ Move to Trash
+→ Mark as read
+Domain Nuke
+Create filter:
+
+Code
+If From: *@domain.com
+→ Move to Trash
+→ Mark as read
+Deleting Existing Emails
+Use users.messages.batchModify with:
+
+removeLabelIds: ["INBOX"]
+
+addLabelIds: ["TRASH"]
+
+Outlook (Microsoft Graph API)
+Blocking a Sender
+Outlook supports native blocking:
+
+Add sender to blockedSenders list
+
+Create inbox rule → move to Junk
+
+Domain Nuke
+Outlook does not support domain‑level blocking directly.
+We simulate by:
+
+Creating rule:
+
+If From contains @domain.com
+
+→ Move to Junk
+
+Deleting Existing Emails
+PATCH → isDeleted = true
+
+Yahoo
+Yahoo supports spam marking but not blocking.
+
+Blocking a Sender
+Mark sender as spam
+
+Create filter → move to Trash
+
+Domain Nuke
+Create filter:
+
+If From contains domain
+
+→ Move to Trash
+
+iCloud / Fastmail / IMAP
+IMAP has no native block.
+
+Blocking a Sender
+We simulate blocking by:
+
+Creating local rule
+
+Auto‑deleting matching senders
+
+Deleting existing emails
+
+Domain Nuke
+Same as sender block, but domain‑wide.
+
+6.5 Safety Rules
+Safety is non‑negotiable.
+
+Rule 1 — Never block personal senders
+If sender is a real human → block action is disabled.
+
+Rule 2 — Never nuke mixed‑purpose domains
+Examples:
+
+google.com
+
+apple.com
+
+amazon.com
+
+banks
+
+airlines
+
+government domains
+
+Rule 3 — Always allow undo
+Undo must restore:
+
+Deleted emails
+
+Filters
+
+Block rules
+
+Domain rules
+
+Rule 4 — Never auto‑block
+AI may suggest, but user must confirm.
+
+Rule 5 — Never block transactional senders
+Receipts, security alerts, etc.
+
+6.6 Domain Safety Classification
+Domains are classified into:
+
+1. Safe to Nuke
+Marketing platforms
+
+Newsletter services
+
+Spammy domains
+
+High‑frequency senders
+
+2. Caution Domains
+E‑commerce
+
+Airlines
+
+Subscription services
+
+Require confirmation.
+
+3. Never Nuke
+Big tech
+
+Banks
+
+Government
+
+Utilities
+
+Healthcare
+
+6.7 Execution Details
+Deleting Existing Emails
+Batch delete in chunks of 50–200
+
+Use provider‑specific batch APIs
+
+Ensure no permanent deletion
+
+Creating Rules
+Rules must be:
+
+Persistent
+
+Provider‑compatible
+
+Reversible
+
+Logged
+
+Undo Tokens
+Undo must restore:
+
+All deleted emails
+
+All rules
+
+All filters
+
+Undo window: 30 seconds minimum
+
+6.8 Logging
+Every block/nuke action logs:
+
+Code
+BlockLog {
+  id
+  user_id
+  sender
+  domain
+  action: "block" | "domain_nuke"
+  timestamp
+  provider
+  metadata
+}
+Logs power:
+
+Undo
+
+AI learning
+
+Stats
+
+Automation
+
+6.9 Performance Requirements
+Block sender < 200ms
+
+Domain nuke < 500ms
+
+Batch delete < 300ms
+
+Rule creation < 150ms
+
+Undo < 100ms
+
+6.10 Output Object
+Code
+BlockResult {
+  success: boolean,
+  action: "block" | "domain_nuke",
+  undo_token: string,
+  metadata: object
+}
