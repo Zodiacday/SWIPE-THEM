@@ -1,0 +1,297 @@
+14. ROADMAP
+This roadmap defines the strategic evolution of the product from MVP → v1 → v1.5 → v2 → long‑term vision.
+It balances:
+
+Speed
+
+Safety
+
+Emotional UX
+
+AI intelligence
+
+Multi‑provider expansion
+
+Monetization
+
+Platform growth
+
+The roadmap is sequenced, realistic, and aligned with user psychology.
+
+14.1 Roadmap Overview
+The product evolves in five phases:
+
+MVP — Core Swipe Experience (Gmail only)
+
+v1 — Multi‑Provider + Emotional UX
+
+v1.5 — Automation + AI Intelligence
+
+v2 — Multi‑Inbox OS + Deep Insights
+
+Long‑Term — The Universal Inbox Layer
+
+Each phase is detailed below.
+
+14.2 MVP (0.1 → 1.0)
+Timeline: 6–10 weeks
+Goal: Ship the fastest, safest, most satisfying inbox cleanup experience.
+
+Included
+Gmail integration
+
+Swipe engine
+
+Undo system
+
+Newsletter detection
+
+Basic AI suggestions
+
+Onboarding + trust
+
+Mini victory screen
+
+Progress bar
+
+Basic insights
+
+Domain nuke (with confirmation)
+
+Logging + database
+
+Not Included
+Multi‑provider
+
+Automation
+
+Advanced AI
+
+Gamification
+
+Boss fights
+
+Zen/Rage modes
+
+Success Criteria
+Users clear 50 emails in < 2 minutes
+
+Day‑1 retention > 40%
+
+Gmail connection rate > 70%
+
+First swipe < 30 seconds
+
+14.3 v1 — Multi‑Provider + Emotional UX
+Timeline: 1–2 months after MVP
+Goal: Expand reach + deepen emotional experience.
+
+Included
+Outlook integration
+
+Yahoo integration
+
+iCloud integration
+
+Fastmail integration
+
+IMAP fallback
+
+Combo system
+
+Sound packs
+
+Haptic variations
+
+Streaks
+
+Themed UI (garden/dojo)
+
+Improved victory screen
+
+Why this matters
+Expands TAM
+
+Increases retention
+
+Strengthens emotional connection
+
+Makes the product feel alive
+
+Success Criteria
+Multi‑provider support > 90% of users
+
+Session length increases
+
+Streak adoption > 50%
+
+14.4 v1.5 — Automation + AI Intelligence
+Timeline: 1–2 months after v1
+Goal: Turn the product into a self‑maintaining inbox system.
+
+Included
+Auto‑delete rules
+
+Auto‑block rules
+
+Auto‑archive rules
+
+Auto‑keep rules
+
+AI rule suggestions
+
+Persistent offender detection
+
+Domain rotation detection
+
+Sender clustering
+
+Inbox health score
+
+Weekly insights
+
+Why this matters
+Reduces daily effort
+
+Builds long‑term retention
+
+Creates “set it and forget it” value
+
+Moves product from tool → system
+
+Success Criteria
+Automation adoption > 30%
+
+Inbox volume reduction > 60%
+
+Weekly return rate increases
+
+14.5 v2 — Multi‑Inbox OS + Deep Insights
+Timeline: 2–4 months after v1.5
+Goal: Become the central control layer for all inboxes.
+
+Included
+Unified inbox view
+
+Cross‑provider rules
+
+Multi‑account cleanup
+
+AI‑powered inbox summaries
+
+AI‑powered sender analysis
+
+Time‑saved analytics
+
+Domain intelligence
+
+Behavioral insights
+
+Inbox optimization recommendations
+
+Why this matters
+Moves product into “Inbox OS” territory
+
+Creates defensibility
+
+Enables enterprise use cases
+
+Unlocks premium monetization
+
+Success Criteria
+Multi‑account adoption > 40%
+
+Weekly insights engagement > 50%
+
+Inbox health score becomes a core metric
+
+14.6 Long‑Term Vision — The Universal Inbox Layer
+Timeline: 6–18 months
+Goal: Become the universal intelligence layer on top of all email providers.
+
+Included
+AI Inbox Assistant
+
+“Explain my inbox”
+
+“Summarize my week”
+
+“Predict future clutter”
+
+“Optimize my email habits”
+
+Cross‑platform integrations
+
+Slack
+
+Teams
+
+SMS
+
+WhatsApp
+
+Calendar
+
+Marketplace for:
+
+Sender reputation
+
+Domain intelligence
+
+Cleanup packs
+
+Automation templates
+
+Enterprise version
+
+Team cleanup
+
+Shared rules
+
+Compliance mode
+
+Why this matters
+Creates a category‑defining product
+
+Builds a moat
+
+Expands into B2B
+
+Turns the product into infrastructure
+
+Success Criteria
+Enterprise adoption
+
+Marketplace revenue
+
+AI assistant usage
+
+Inbox OS becomes the default layer
+
+14.7 Strategic Principles
+1. Emotion first
+Every release must increase emotional satisfaction.
+
+2. Safety always
+Undo everywhere.
+No irreversible actions.
+No content reading.
+
+3. AI as assistant, not agent
+AI suggests.
+User decides.
+
+4. Build trust before automation
+Automation comes only after user confidence.
+
+5. Ship fast, iterate faster
+Small releases.
+Continuous improvement.
+
+14.8 Roadmap Summary Table
+Phase	Focus	Key Features
+MVP	Core experience	Swipe engine, Gmail, Undo, Basic AI
+v1	Emotional UX + Providers	Outlook/Yahoo/iCloud, combos, streaks
+v1.5	Automation + AI	Auto‑rules, clustering, insights
+v2	Inbox OS	Multi‑inbox, deep analytics, AI summaries
+Long‑Term	Universal layer	AI assistant, marketplace, enterprise
