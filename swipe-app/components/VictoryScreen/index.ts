@@ -1,1 +1,0 @@
-export { VictoryScreen } from "./VictoryScreen";
