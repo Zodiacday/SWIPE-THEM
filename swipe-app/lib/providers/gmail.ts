@@ -173,7 +173,11 @@ export async function getEmailMetadata(
             senderName,
             senderDomain,
             subject: getHeader("Subject") || "(no subject)",
+            preview: response.data.snippet || "",
+            receivedAt: new Date(parseInt(internalDate || "0", 10)).toISOString(),
             timestamp: parseInt(internalDate || "0", 10),
+            isRead: !labelIds?.includes("UNREAD"),
+            size: response.data.sizeEstimate || 0,
             listUnsubscribe: {
                 http: httpMatch?.[1] || null,
                 mailto: mailtoMatch?.[1] || null,
@@ -196,6 +200,7 @@ export async function getEmailMetadata(
                 xMailchimp: getHeader("X-MC-User"),
             },
         };
+
     } catch (error) {
         console.error(`Failed to get email metadata for ${messageId}:`, error);
         return null;
